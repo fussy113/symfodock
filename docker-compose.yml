@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+    workspace:
+      # depends_onで依存関係を示す.appでmysqlを使いたいのでdbコンテナを指定.
+      # build はDockerfileからビルドすることを示す.
+      # pathは相対パスになるので、build/app/Dockerfileが読まれる.
+      build: "./php53-apache"
+      # ports でポートフォワーディングを指定.
+      ports:
+        - "8080:8080"
+      # volumes でマウントの指定.こちらも相対パス.
+      volumes:
+        - ./workspace:/var/www/html
+        - ./httpd.conf:/etc/httpd/conf/httpd.conf
+      # links で連携させるコンテナを示す.
+      # depends_onはビルド時に依存関係を考慮してビルドさせるために指定.
+      # links は appコンテナの/etc/hostsにdbのipを記述してくれる.
+      links:
+        - postgres
+
+    postgres:
+      restart: always
+      image: postgres
+      environment:
+        LC_ALL: C.UTF-8
+        POSTGRES_USER: hoge
+        POSTGRES_PASSWORD: password
+      volumes:
+        - ./pgsql-data:/var/lib/postgresql/data
+        - ./logs/postgresql:/var/log/postgresql
+      ports:
+        - "5432:5432"
