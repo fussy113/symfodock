@@ -28,4 +28,4 @@ RUN service httpd start
 WORKDIR /var/www/html
 EXPOSE 8080
 
-ENTRYPOINT ["/usr/sbin/httpd","-DFOREGROUND"]
+CMD ["/usr/sbin/httpd","-DFOREGROUND"]
