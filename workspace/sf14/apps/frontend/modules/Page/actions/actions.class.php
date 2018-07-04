@@ -24,4 +24,22 @@ class PageActions extends sfActions
       $this->page = $page;
       $this->pageList = $pageList;
   }
+
+  // showアクション,paramで:slugを渡し、pageテーブルから取得する
+  public function executeShow(sfWebRequest $request){
+    $slug = $request->getParameter('slug');
+    $this->page = PageTable::getInstance()->findOneBySlug($slug);
+  }
+
+  // カテゴリがニュースのレコードを取得する
+  public function executeNewsList(sfWebRequest $request){
+    $this->pageList = PageTable::getInstance()->findByCategory('news');
+  }
+
+  // showアクション,paramで:slugを渡し、pageテーブルから取得する
+  public function executeNewsShow(sfWebRequest $request){
+    $slug = $request->getParameter('slug');
+    $this->page = PageTable::getInstance()->findOneBySlug($slug);
+  }
+
 }
