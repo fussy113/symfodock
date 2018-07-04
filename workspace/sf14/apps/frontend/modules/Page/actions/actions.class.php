@@ -17,6 +17,11 @@ class PageActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->forward('default', 'module');
+      $page = PageTable::getInstance()->findOneBySlug('top');
+      $pageList = PageTable::getInstance()->createQuery('page')
+                    ->select('page.title,page.body')
+                    ->execute();
+      $this->page = $page;
+      $this->pageList = $pageList;
   }
 }
