@@ -27,7 +27,7 @@ services:
         POSTGRES_USER: hoge
         POSTGRES_PASSWORD: password
       volumes:
-        - ./pgsql-data:/var/lib/postgresql/data
-        - ./logs/postgresql:/var/log/postgresql
+        - ./pgsql-data:/var/lib/pgsql/data
+        - ./logs/postgresql:/var/log/pgsql
       ports:
         - "5432:5432"
