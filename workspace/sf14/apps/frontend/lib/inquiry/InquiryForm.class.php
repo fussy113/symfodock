@@ -64,4 +64,17 @@ class InquiryForm extends BaseForm
     ));
     $this->widgetSchema->setNameFormat('inquiry[%s]');
   }
+  public function send(sfContext $context, $to, $subject)
+  {
+    $action = $context->getActionStack()->getLastEntry()->getActionInstance();
+
+    $body = $action->getPartial('InquiryBody', $this->getValues());
+    $from = $this->getValue('email');
+
+    if (isset($to) && isset($subject) && isset($body) && isset($from))
+    {
+      $mailer = $context->getMailer();
+      $mailer->composeAndSend($from, $to, $subject, $body);
+    }
+  }
 }

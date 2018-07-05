@@ -29,6 +29,8 @@ class InquiryActions extends sfActions
       $form->bind($request->getParameter($form->getName()));
       if ($form->isValid())
       {
+        $form->send($this->context, 's1220080@gmail.com', 'HPからの問い合わせ');
+        $this->getUser()->setAttribute('inquiry_send', true);
         $this->redirect('Inquiry/Complete');
       }
     }
@@ -37,6 +39,8 @@ class InquiryActions extends sfActions
 
   public function executeComplete(sfRequest $request)
   {
-    
+    $user = $this->getUser();
+    $this->redirectUnless($user->getAttribute('inquiry_send'), 'Inquiry/New');
+    $user->setAttribute('inquiry_send', null); 
   }
 }
