@@ -6,6 +6,6 @@ all:
     class: sfDoctrineDatabase
     param:
       encoding: utf8
-      dsn:      pgsql:host=172.18.0.2;dbname=sf14
+      dsn: pgsql:host=172.18.0.2;dbname=sf14
       username: hoge
       password: password

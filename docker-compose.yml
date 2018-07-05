@@ -2,13 +2,14 @@ version: '2'
 
 services:
     workspace:
+      env_file: .env
       # depends_onで依存関係を示す.appでmysqlを使いたいのでdbコンテナを指定.
       # build はDockerfileからビルドすることを示す.
       # pathは相対パスになるので、build/app/Dockerfileが読まれる.
       build: "./php53-apache"
       # ports でポートフォワーディングを指定.
       ports:
-        - "8080:8080"
+        - $PORT:$PORT
       # volumes でマウントの指定.こちらも相対パス.
       volumes:
         - ./workspace:/var/www/html
@@ -24,10 +25,9 @@ services:
       image: postgres
       environment:
         LC_ALL: C.UTF-8
-        POSTGRES_USER: hoge
-        POSTGRES_PASSWORD: password
+        POSTGRES_USER: $POSTGRES_USER
+        POSTGRES_PASSWORD: $POSTGRES_PASSWORD
       volumes:
         - ./pgsql-data:/var/lib/pgsql/data
-        - ./logs/postgresql:/var/log/pgsql
       ports:
-        - "5432:5432"
+        - $DB_PORT:$DB_PORT

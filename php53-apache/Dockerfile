@@ -26,6 +26,6 @@ RUN yum -y install vim
 RUN service httpd start
 
 WORKDIR /var/www/html
-EXPOSE 8080
+EXPOSE $PORT
 
 CMD ["/usr/sbin/httpd","-DFOREGROUND"]
