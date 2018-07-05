@@ -23,6 +23,20 @@ class InquiryActions extends sfActions
   public function executeNew(sfWebRequest $request)
   {
     $form = new InquiryForm();
+    //送信ボタンが押された際の処理
+    if ($request->isMethod(sfRequest::POST))
+    {
+      $form->bind($request->getParameter($form->getName()));
+      if ($form->isValid())
+      {
+        $this->redirect('Inquiry/Complete');
+      }
+    }
     $this->form = $form;
+  }
+
+  public function executeComplete(sfRequest $request)
+  {
+    
   }
 }
