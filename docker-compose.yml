@@ -3,17 +3,13 @@ version: '2'
 services:
     workspace:
       build: "./php53-apache"
-      # ports でポートフォワーディングを指定.
       ports:
-        - "${PORT}:${PORT}"
+        - "${APACHE_PORT}:${APACHE_PORT}"
       # volumes でマウントの指定.こちらも相対パス.
       volumes:
         - ./workspace:/var/www/html
         - ./php53-apache/httpd.conf:/etc/httpd/conf/httpd.conf
         - ./logs/symfony/:/var/log/httpd/
-      # links で連携させるコンテナを示す.
-      # depends_onはビルド時に依存関係を考慮してビルドさせるために指定.
-      # links は appコンテナの/etc/hostsにdbのipを記述してくれる.
       links:
         - postgres:postgres
 
