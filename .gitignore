@@ -1,4 +1,3 @@
-logs/*
 logs/postgresql/*
 logs/symfony/*
 !logs/.keep
