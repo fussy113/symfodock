@@ -12,9 +12,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    []
+  stylesheets:    [dist/bundle.css]
 
-  javascripts:    []
+  javascripts:    [dist/bundle.js]
 
   has_layout:     true
   layout:         layout
