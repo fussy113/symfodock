@@ -10,5 +10,6 @@
 ```
   git clone https://github.com/fussy113/symfodock.git ./
   cd symfodock
+  cp .env_example .env
   docker-compose up -d
 ```
