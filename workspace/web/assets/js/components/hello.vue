@@ -1,6 +1,6 @@
 <template>
     <div id='test'>
-      hello
+      hello world!!
     </div>
 </template>
 
@@ -13,6 +13,7 @@
         mounted () {
         },
         created () {
+          console.log('hello Components');
         },
         methods: {
 

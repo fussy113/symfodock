@@ -40,4 +40,10 @@ module.exports = {
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({filename: 'web/css/dist/bundle.css'}),
   ],
+  devServer: {
+    contentBase: 'web/js/assets',
+    port: 8080,
+    inline: true,
+    disableHostCheck: true
+  },
 };
