@@ -1,0 +1,9 @@
+logs/*
+logs/postgresql/*
+logs/symfony/*
+!logs/.keep
+!logs/postgresql/.keep
+!logs/symfony/.keep
+pgsql-data/*
+!pgsql-data/.keep
+.env
