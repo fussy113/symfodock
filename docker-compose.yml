@@ -24,3 +24,10 @@ services:
         - ./pgsql-data:/var/lib/postgresql/data
       ports:
         - "${DB_PORT}:${DB_PORT}"
+
+    node:
+      restart: always
+      image: node:8.12-alpine
+      volumes:
+        - ./workspace:/var/www/html
+      working_dir: /var/www/html
