@@ -8,7 +8,9 @@
     <?php include_stylesheets() ?>
   </head>
   <body>
-    <?php echo $sf_content ?>
+    <div id="app">
+      <?php echo $sf_content ?>
+    </div>
     <?php include_javascripts() ?>
   </body>
 </html>
