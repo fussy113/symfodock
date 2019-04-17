@@ -1,5 +1,4 @@
 <?php
-
   class playgroundActions extends sfActions
   {
     /**
@@ -11,5 +10,6 @@
     {
       // $this->forward('default', 'module');
       $this->testText = 'test';
+      $this->testValue = TravelInfo::TEST_VALUE;
     }
   }
