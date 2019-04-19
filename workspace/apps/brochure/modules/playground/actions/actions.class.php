@@ -9,7 +9,6 @@
     public function executeIndex(sfWebRequest $request)
     {
       // $this->forward('default', 'module');
-      $this->testText = 'test';
-      $this->testValue = TravelInfo::TEST_VALUE;
+      $this->testArr = TravelInfo::$banquet;
     }
   }

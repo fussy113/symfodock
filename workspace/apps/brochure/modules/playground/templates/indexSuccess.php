@@ -1,5 +1,6 @@
 <h1>遊び場</h1>
 <div class="content">
-  <?php echo $testText ?>
-  <?php echo $testValue ?>
+  <?php foreach($testArr as $value) { ?>
+    <p><?php echo $value ?></p>
+  <?php } ?>
 </div>

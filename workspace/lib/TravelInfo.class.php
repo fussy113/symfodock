@@ -1,4 +1,7 @@
 <?php
 class TravelInfo {
-  const TEST_VALUE = 1;
-}
+  static $banquet = array(
+    'hoge' => 'hoge',
+    'fuga' => 'fuga'
+  );
+};
