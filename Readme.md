@@ -37,3 +37,6 @@ all:
 
 * 開発環境URL
 http://www.symfonyproject.localhost:8080
+
+* DB直接操作する場合(コンテナ起動時)
+`docker-compose exec postgres psql -Usymfodock -W`
