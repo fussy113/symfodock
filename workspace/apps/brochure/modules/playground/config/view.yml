@@ -1,3 +1,0 @@
-indexSuccess:
-  stylesheets: [brochure/index.css]
-  javascripts: [vendor/jquery/jquery-3.3.1.min.js, brochure/index.js]
