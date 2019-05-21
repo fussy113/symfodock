@@ -11,7 +11,7 @@ all:
     class: sfDoctrineDatabase
     param:
       dsn:      pgsql:host=postgres;dbname=symfodock
-      username: sf14
+      username: symfodock
       password: password
 ```
 
