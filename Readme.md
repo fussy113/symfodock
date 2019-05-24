@@ -24,7 +24,7 @@ all:
 
 ```
   # 初期設定
-  git clone https://github.com/fussy113/symfodock.git:initialize
+  git clone -b initialize https://github.com/fussy113/symfodock.git
   cd symfodock
   cp .env_example .env
 
