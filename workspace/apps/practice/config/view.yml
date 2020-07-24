@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        symfony楽団
+    description:  クラシック音楽を演奏するグループです
+    keywords:     symfony, 楽団, シンフォニー, 募集, 紹介
+    language:     jp
+    robots:       index, follow
+
+  stylesheets:    [reset.css, text.css, 960.css,main.css,practice.css]
+
+  javascripts:    []
+
+  has_layout:     true
+  layout:         layout

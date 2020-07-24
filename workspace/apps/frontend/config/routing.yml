@@ -3,14 +3,30 @@
 
 # default rules
 homepage:
-  url:   /
-  param: { module: default, action: index }
+  url: /
+  param: { module: Page, action: Show, slug: top }
+
+page_show:
+  url: /page/:slug
+  param: { module: Page, action: Show }
 
 # generic rules
 # please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
+news_list:
+  url: /news
+  param: { module: Page, action: NewsList }
+
+news_show:
+  url: /news/:slug
+  param: { module: Page, action: NewsShow }
+
+inquiry_complete:
+  url: /inquiry/complete
+  param: { module: Inquiry, action: Complete }
 
 default:
-  url:   /:module/:action/*
+  url: /:module/:action
+
+inquiry_new:
+  url: /inquiry/new
+  param: { module: Inquiry, action: New }

@@ -3,9 +3,9 @@
 
 prod:
   logger:
-    class:   sfNoLogger
+    class: sfNoLogger
     param:
-      level:   err
+      level: err
       loggers: ~
 
 test:
@@ -26,17 +26,20 @@ test:
 dev:
   mailer:
     param:
-      delivery_strategy: none
+      charset: "UTF-8"
+      delivery_strategy: realtime
+      transoport:
+        class: Swift_SendmailTransport
 
 all:
   routing:
     class: sfPatternRouting
     param:
-      generate_shortest_url:            true
+      generate_shortest_url: true
       extra_parameters_as_query_string: true
 
   view_cache_manager:
     class: sfViewCacheManager
     param:
       cache_key_use_vary_headers: true
-      cache_key_use_host_name:    true
+      cache_key_use_host_name: true

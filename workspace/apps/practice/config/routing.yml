@@ -1,0 +1,51 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+
+homepage:
+  url:   /
+  param: { module: Page, action: Show }
+
+page_show:
+  url: /page/:slug
+  param: { module: Page, action: Show }
+
+news_list:
+  url: /news
+  param: { module: Page, action: NewsList }
+
+news_show:
+  url: /news/:slug
+  param: { module: Page, action: NewsShow }
+
+inquiry_new:
+  url: /inquiry/new
+  param: { module: Inquiry, action: New }
+
+#STAFF紹介
+
+staff_list:
+  url: /staff
+  param: { module: Staff, action: List }
+
+staff_detail:
+  url: /staff/:staffId
+  param: { module: Staff, action: Detail }
+
+#グルメページ
+gourmet_list:
+  url: /gourmet
+  param: { module: Gourmet, action: List }
+
+#グルメ詳細ページ
+gourmet_detail:
+  url: /gourmet/:shopId
+  param: { module: Gourmet, action: Detail }
+
+gourmet_power:
+  url: /gourmet/dinner
+  param: { module: Gourmet, action: DinnerShop }
+
+default:
+  url: /:module/:action/*
